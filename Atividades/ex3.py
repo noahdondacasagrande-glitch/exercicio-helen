@@ -1,16 +1,29 @@
-nomes = ["Dipirona", "Paracetamol", "Loratadina", "Ibuprofeno", "Omeprazol"]
+nomes = ["dipirona", "paracetamol", "loratadina", "ibuprofeno", "omeprazol"]
 precos = [12.50, 9.90, 18.75, 15.00, 22.30]
 estoques = [20, 15, 8, 3, 2]
-
+posicao = 0
 
 def listarMedicamentos():
     print("tabela de remedios")
     for i in range(len(nomes)):
-        print(f"Remedio:{nomes[i]} - Preço: R${precos[i]:.2f} - Estoque: {estoques[i]} unidades")
-def pesquisarMedicamento():
-def registrarVenda():
-def reporEstoque():
-def verificarEstoqueBaixo():
+        print(f"Remedio:{nomes[i]} Preço: R${precos[i]:.2f} Estoque: {estoques[i]} unidades")
+
+def pesquisarMedicamento(nomes):
+    medicPes= input("qual medicamento voce quer?")
+    pesquisa =[]
+    for i in range(len(nomes)):
+        posicao+=1
+        if i == medicPes:
+            pesquisa[i] = nomes(i)
+    return  print(f"Remedio:{pesquisa[posicao]} Preço: R${precos[posicao]:.2f} Estoque: {estoques[posicao]} unidades")
+
+
+    
+
+
+# def registrarVenda():
+# def reporEstoque():
+# def verificarEstoqueBaixo():
 
 def menu():
     while True:
@@ -26,13 +39,13 @@ def menu():
         if escolha == "1":
             listarMedicamentos()  
         elif escolha == "2":
-            pesquisarMedicamento()  
-        elif escolha == "3":
-            registrarVenda()
-        elif escolha == "4":
-            reporEstoque() 
-        elif escolha == "5":
-            verificarEstoqueBaixo() 
+            pesquisarMedicamento(nomes, posicao)  
+        # elif escolha == "3":
+        #     registrarVenda()
+        # elif escolha == "4":
+        #     reporEstoque() 
+        # elif escolha == "5":
+        #     verificarEstoqueBaixo() 
 
 
 menu()
